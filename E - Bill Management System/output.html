@@ -1,0 +1,179 @@
+import java.util.*;
+class ElectricityBill
+ {
+ int Service;
+ String Name;
+ String Category;
+ String PType,Ch;
+ int unit;
+ int Amount,FixedC,EnergyC,EnergyT;
+Scanner sc = new Scanner(System.in);
+ void Bill()
+ {
+ System.out.println("\t\t\t\t\t\t\t\t\tWELCOME TO THE SUNPOWER");
+System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+ System.out.print("Enter Customer's Service Number  :");
+ 
+ Service=sc.nextInt();
+
+ System.out.print("Enter Customer Name : ");
+ 
+Name=sc.next();
+ System.out.print("Enter Customer's Category(Industrial/Residential):"); 
+ 
+Category = sc.next();
+ System.out.print("Enter Customer's Phase Type(Single/Three) :");
+  
+PType= sc.next();
+System.out.print("Enter Customer's units  :");
+
+ unit=sc.nextInt();
+}
+void Calculate()
+{
+boolean u=true;
+boolean f=false;
+
+if((Category.equals("Residential")==u) || (Category.equals("residential")==u))
+{
+
+	
+       if(unit>0 && unit<=50)
+	{
+		Amount=(int)(unit*3.90);
+		System.out.println("|\tAmount="+Amount);
+	}
+	else if(unit>=51 && unit<400)
+	{
+	 	Amount=(int)(unit*4.90);
+		System.out.println("|\tAmount="+Amount);
+	}
+
+	else if(unit>=400)
+	{
+		Amount=(int)(unit*5.90);
+		System.out.println("|\tAmount="+Amount);
+	}
+	else 
+	{
+		System.out.println("wrong input");
+	}
+}
+else if((Category.equals("Industrial")==u) || (Category.equals("industrial")==u))
+{
+	if(unit>0 && unit<=50)
+	{
+		Amount=(int)(unit*3.10);
+		System.out.println("\tAmount="+Amount);	
+	}
+	else if(unit>=51 && unit<400)
+	{
+	 	Amount=(int)(unit*3.90);
+		System.out.println("\tAmount="+Amount);
+	}
+	else if(unit>=400)
+	{
+		Amount=(int)(unit*4.50);
+		System.out.println("\tAmount="+Amount);
+	}
+	else 
+	{
+		System.out.println("wrong Input");
+	}
+}
+	else
+	{
+	if(unit>0 && unit<50)
+	{
+		Amount=(int)(unit*4.10);
+		System.out.println("\tAmount="+Amount);	
+	}
+	else if(unit>=51 && unit<200)
+	{
+	 	Amount=(int)(unit*4.50);
+		System.out.println("\tAmount="+Amount);
+	}
+	else if(unit>=400)
+	{
+		Amount=(int)(unit*5.10);
+		System.out.println("\tAmount="+Amount);
+	}
+	else 
+	{
+		System.out.println("wrong Input");
+	}
+		
+        }
+}
+      
+    
+ void phase()
+{
+System.out.println("\t\t\tYour Bill Includes Taxes as shown Below:");
+boolean i=true;
+boolean j=false;
+if((PType.equals("Single")==i) || (PType.equals("single")==i))
+{
+	
+	FixedC=(int)(Amount*0.5442)/100;
+	EnergyC=(int)(Amount*82.255)/100;
+	EnergyT=(int)(Amount*17.122)/100;
+	System.out.println("\tFixed Charge:"+FixedC);
+	System.out.println("\tEnergy Charge:"+EnergyC);
+	System.out.println("\tEnergy Tax:"+EnergyT);
+        
+}
+else if((PType.equals("Three")==i) || (PType.equals("three")==i))
+{
+	FixedC=(int)(Amount*1.1655)/100;
+	EnergyC=(int)(Amount*82.1882)/100;
+	EnergyT=(int)(Amount*16.6666)/100;
+	System.out.println("\tFixed Charge:"+FixedC);
+	System.out.println("\tEnergy Charge:"+EnergyC);
+	System.out.println("\tEnergy Tax:"+EnergyT);
+}
+else
+{
+System.out.println("Wrong Input");
+}
+
+}
+ 
+
+
+
+ void PutData() 
+ {
+
+ System.out.println("\tService Number : "+Service);
+ System.out.println("\tCustomer's Name : "+Name);
+ System.out.println("\tCustomer's unit : "+unit);
+ System.out.println("\tCustomer's Category : "+Category);
+ System.out.println("\tCustomer's Phase Type : "+PType);
+}
+
+
+
+ public static void main(String args[])
+ {
+ ElectricityBill ob = new ElectricityBill();
+System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+ ob.Bill();
+System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+ob.PutData();
+System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+ob.phase();
+System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+ob.Calculate();
+System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
+}}
+
+
+
+  
+ 
+
+
+
+

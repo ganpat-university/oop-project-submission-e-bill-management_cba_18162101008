@@ -1,0 +1,84 @@
+*
+{
+  box-sizing: border-box;
+  
+}
+
+body 
+{
+  margin: 0;
+}
+
+.header 
+{
+  float: left;
+  background-color:rgb(255, 206, 101);
+  padding: 10px;
+  text-align: left;
+}
+.header1 
+{
+  background-color:rgb(255, 206, 101);
+  padding: 10px;
+  text-align: center;
+}
+
+.topnav 
+{
+  overflow: hidden;
+  background-color:rgb(202, 131, 38);
+}
+
+.topnav a 
+{
+  float: left;
+  display: block;
+  color:whitesmoke;
+  text-align: centre;
+  padding: 16px 18px;
+  text-decoration: none;
+}
+
+.topnav a:hover 
+{
+  background-color:rgb(255, 206, 101);
+  color: black;
+}
+
+.topnav a.log
+{
+  float: right;
+  display: block;
+  color:whitesmoke;
+  text-align: centre;
+  padding: 16px 18px;
+  text-decoration: none;
+}
+
+.topnav a.log:hover 
+{
+  background-color:rgb(255, 206, 101);
+  color: black;
+}
+.topnav a.a1
+{
+  background-color:rgb(255, 206, 101);
+  color:black;
+}
+
+#cols .column
+{
+  float:left;
+  width: 70%;
+  padding: 6%;
+  background:rgb(204, 243, 245);
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
